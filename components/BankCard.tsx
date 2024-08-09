@@ -1,4 +1,5 @@
 import { formatAmount } from "@/lib/utils"
+import Image from "next/image"
 import Link from "next/link"
 
 const BankCard = ({account, userName, showBalance = true}: CreditCardProps) => {
@@ -15,10 +16,24 @@ const BankCard = ({account, userName, showBalance = true}: CreditCardProps) => {
                         <h1 className="text-12 font-semibold">
                             {userName}
                         </h1>
+                        <h2 className="text-12 font-semibold">
+                        ●● / ●●
+                        </h2>
                     </div>
+                    <p className="text-14 font-semibold tracking-[1.1px] text-white">
+                    ●●●● ●●●● ●●●● <span className="text-16">12345</span>
+                    </p>
                 </article>
             </div>
+
+            <div className="bank-card_icon">
+                <Image src="/icons/Paypass.svg" width={20} height={24} alt="pay" />
+                <Image src="/icons/mastercard.svg" width={45} height={32} alt="mastercard" className="ml-5" />
+            </div>
+            <Image src="/icons/lines.png" width={316} height={190} alt="lines" className="absolute top-0 left-0"/>
         </Link>
+
+        {/* COPY */ }
     </div>
   )
 }
